@@ -3,42 +3,44 @@ class CfgPatches
 	class a3cn_scopes
 	{
 		units[]   = {};
-		weapons[] = 
+		weapons[] =
 		{
+			"optic_LRPS_Themal",
 			"a3cn_LSMARK4",
 			"a3cn_LSMARK4_Delta",
+			"a3cn_LSMARK4_Thermal",
+			"a3cn_LSMARK4_Sand",
 			"a3cn_sb31250",
 			"a3cn_ANPVS10",
 			"a3cn_ANPVS10_Green",
 			"a3cn_anpasl",
 			"a3cn_anpasm",
-			"a3cn_ANPVS4",
-			"A3CN_orionscope_nvg"
+			"a3cn_ANPVS4"
 		};
 		requiredversion  = 0.1;
 		requiredaddons[] = {
 			"A3_Weapons_F_Acc",
-			"cba_a3"
-		};		
+			"asdg_jointrails"
+		};
 	};
 };
 
 class asdg_OpticRail;
 class asdg_FrontSideRail;
-class asdg_OpticRail1913: asdg_OpticRail 	
+class asdg_OpticRail1913: asdg_OpticRail
 {
-    class compatibleItems 
+    class compatibleItems
     {
         a3cn_LSMARK4 = 1;
-		a3cn_LSMARK4_Delta = 1;
-		a3cn_sb31250 = 1;
-		a3cn_anpvs10 = 1;
-		a3cn_anpvs10_green = 1;
-		a3cn_anpasl = 1;
-		a3cn_anpasm = 1;
-		a3cn_anpvs4 = 1;
-		a3cn_m68cco = 1;
-		A3CN_orionscope_nvg = 1;
+				a3cn_LSMARK4_Thermal = 1;
+				a3cn_LSMARK4_Delta = 1;
+				a3cn_sb31250 = 1;
+				a3cn_anpvs10 = 1;
+				a3cn_anpvs10_green = 1;
+				a3cn_anpasl = 1;
+				a3cn_anpasm = 1;
+				a3cn_anpvs4 = 1;
+				a3cn_m68cco = 1;
     };
 };
 
@@ -49,14 +51,13 @@ class Mode_FullAuto;
 class CfgWeapons
 {
     class ItemCore;
-	class InventoryOpticsItem_Base_F;
-
+		class InventoryOpticsItem_Base_F;
     class optic_tws;
     class optic_Nightstalker;
     class optic_nvs;
-	
-	class optic_SOS : ItemCore 
-	{	
+
+	class optic_SOS : ItemCore
+	{
 		descriptionShort = "Marksman Optical Sights<br />Magnification: 2,5x-5x<br/>NightVision";
 		ACE_NightVision_grain = 0.0;
         ACE_NightVision_blur = 0.0;
@@ -66,8 +67,9 @@ class CfgWeapons
 			class OpticsModes
 			{
 				class Snip
-				{					
-					visionMode[] = {"Normal","NVG"};
+				{
+					visionMode[] = {"Normal","NVG","Ti"};
+					thermalMode[]={0,1};
 				};
 				class Iron: Snip
 				{
@@ -86,7 +88,8 @@ class CfgWeapons
 			{
 				class Snip
 				{
-					visionMode[] = {"Normal","NVG"};
+					visionMode[] = {"Normal","NVG","Ti"};
+					thermalMode[]={0,1};
 				};
 				class Iron: Snip
 				{
@@ -94,7 +97,7 @@ class CfgWeapons
 			};
 		};
 	};
-	
+
 	class optic_LRPS : ItemCore {
 		descriptionShort = "Long-Range Precision Scope<br />Magnification: 6x-25x";
 		ACE_NightVision_grain = 0.0;
@@ -105,12 +108,13 @@ class CfgWeapons
 			class OpticsModes
 			{
 				class Snip{
-					visionMode[] = {"Normal","NVG"};
+					visionMode[] = {"Normal","NVG","Ti"};
+					thermalMode[]={0,1};
 				};
 			};
 		};
 	};
-	
+
 	class optic_LRPS_Themal : ItemCore {
 		descriptionShort = "Long-Range Precision Scope with Thermal<br />Magnification: 6x-25x";
 		ACE_NightVision_grain = 0.0;
@@ -126,7 +130,7 @@ class CfgWeapons
 			};
 		};
 	};
-	
+
 	class optic_AMS_base : ItemCore {
 		descriptionShort = "Advanced Marksman Scope<br />Magnification:3x-10x<br />NightVision";
 		DLC = "Mark";
@@ -139,12 +143,13 @@ class CfgWeapons
 			{
 				class AMS
 				{
-					visionMode[] = {"Normal", "NVG"};
+					visionMode[] = {"Normal", "NVG","Ti"};
+					thermalMode[]={0,1};
 				};
 			};
 		};
 	};
-	
+
 	class optic_KHS_base : ItemCore {
 		descriptionShort = "Kahlia<br />Magnification: 5x-11x<br/>NightVision";
 		DLC = "Mark";
@@ -157,7 +162,8 @@ class CfgWeapons
 			{
 				class KHS
 				{
-					visionMode[] = {"Normal","NVG"};
+					visionMode[] = {"Normal","NVG","Ti"};
+					thermalMode[]={0,1};
 				};
 				class Iron
 				{
@@ -165,7 +171,7 @@ class CfgWeapons
 			};
 		};
 	};
-	
+
 	class a3cn_LSMARK4: optic_LRPS {
 		dlc="A3CN_Scopes";
 		scope = 2;
@@ -235,8 +241,8 @@ class CfgWeapons
 				};
 			};
 		};
-	};	
-	
+	};
+
 	class a3cn_LSMARK4_Thermal: optic_LRPS {
 		dlc="A3CN_Scopes";
 		scope = 2;
@@ -279,7 +285,8 @@ class CfgWeapons
 					discreteInitIndex = 0;
 					memoryPointCamera = "eye";
 					modelOptics[] = {"\A3\Weapons_F\acc\reticle_LRPS_F","\A3\Weapons_F\acc\reticle_LRPS_z_F"};
-					visionMode[] = {"Normal","Ti"};
+					visionMode[] = {"Normal","NVG","Ti"};
+					thermalMode[]={0,1};
 					opticsFlare = "true";
 					opticsDisablePeripherialVision = "true";
 					cameraDir = "";
@@ -307,7 +314,7 @@ class CfgWeapons
 			};
 		};
 	};
-	
+
 	class a3cn_LSMARK4_Delta: a3cn_LSMARK4
 	{
 		scope = 2;
@@ -323,7 +330,7 @@ class CfgWeapons
 			libtextdesc = "Leupold & Stevens Mark 4 LR/T 10x40mm (30mm) M3 w/ DeltaPoint Reflex";
 		};
 	};
-	
+
 	class a3cn_LSMARK4_Sand: a3cn_LSMARK4
 	{
 		scope = 2;
@@ -339,7 +346,7 @@ class CfgWeapons
 			libtextdesc = "Leupold & Stevens Mark 4 LR/T 10x40mm (30mm) M3 Sand Painting";
 		};
 	};
-	
+
 	class a3cn_SB31250: optic_LRPS
 	{
 		scope = 2;
@@ -409,7 +416,7 @@ class CfgWeapons
 				};
 			};
 		};
-	};	
+	};
 	class a3cn_ANPVS10: optic_Nightstalker
 	{
 		author = "Hippye";
@@ -562,7 +569,7 @@ class CfgWeapons
 				};
 			};
 		};
-	};	
+	};
 	class a3cn_ANPVS4: optic_Nightstalker
 	{
 		author = "Hippye";
@@ -653,64 +660,4 @@ class CfgWeapons
 		scope = 2;
 		model = "A3\weapons_f\data\zaslehsdl_proxy.p3d";
 	};
-	
-	class A3CN_orionscope_nvg : ItemCore 
-    { 
-        scope = 2; 
-        displayName="ORION GEN 1+ NV (WIP)"; 
-  
-        picture="a3cn_scopes\Data\UI\orionscope_ca.paa"; 
-        model = "a3cn_scopes\orionscope_nvg";     
-        weaponInfoType = "RscOptics_nightstalker";  
-		
-		ACE_NightVision_grain = 0.0;
-        ACE_NightVision_blur = 0.0;
-        ACE_NightVision_radBlur = 0.0;
-          
-        class ItemInfo: InventoryOpticsItem_Base_F 
-        {     
-            mass = 7; 
-            author = "A3CN-Bussarello"; 
-            modelOptics = "\A3\Weapons_f\acc\reticle_nightstalker_F";
-            class OpticsModes 
-            { 
-                class MyOptics 
-                { 
-                    opticsID = 1; 
-					opticsDisplayName = WFOV;
-                    useModelOptics = true; 
-                    opticsPPEffects[]={"OpticsCHAbera1","OpticsBlur1"}; 
-                    opticsZoomMin = 0.0555; 
-                    opticsZoomMax = 0.1300; 
-                    opticsZoomInit= 0.1300; 
-                    discreteDistance[] = {100,200,300,400,500}; 
-                    discreteDistanceInitIndex = 1;     
-                    distanceZoomMin = 100; 
-                    distanceZoomMax = 500;     
-                    nFovLimit = 0.07; 
-                    discretefov[] = {0.1300,0.0555}; 
-                    discreteInitIndex = 0;                         
-                  //modelOptics[] = {"a3cn_scopes\reticle_orionscope_F"};  
-                    memoryPointCamera = "opticView"; 
-                    visionMode[] = {"Normal","NVG"}; 
-                    opticsFlare = true; 
-                    opticsDisablePeripherialVision = true; 
-                    cameraDir = ""; 
-                }; 
-                class IronOnTopOfMyOptics: MyOptics 
-                { 
-                    opticsID = 2; 
-                    useModelOptics = false;
-                    opticsFlare = false; 
-                    opticsDisablePeripherialVision = false; 
-                    opticsZoomMin=0.375;  
-                    opticsZoomMax=1.1;   
-                    opticsZoomInit=0.75; 
-                    memoryPointCamera = "eye"; 
-                    visionMode[] = {}; 
-                    discretefov[] = {}; 
-                };     
-            }; 
-        }; 
-    };
 };
