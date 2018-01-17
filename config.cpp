@@ -115,21 +115,6 @@ class CfgWeapons
 		};
 	};
 
-	class optic_LRPS_Themal : ItemCore {
-		descriptionShort = "Long-Range Precision Scope with Thermal<br />Magnification: 6x-25x";
-		ACE_NightVision_grain = 0.0;
-        ACE_NightVision_blur = 0.0;
-        ACE_NightVision_radBlur = 0.0;
-		class ItemInfo: InventoryOpticsItem_Base_F
-		{
-			class OpticsModes
-			{
-				class Snip{
-					visionMode[] = {"Normal","Ti"};
-				};
-			};
-		};
-	};
 
 	class optic_AMS_base : ItemCore {
 		descriptionShort = "Advanced Marksman Scope<br />Magnification:3x-10x<br />NightVision";
@@ -175,6 +160,8 @@ class CfgWeapons
 	class a3cn_LSMARK4: optic_LRPS {
 		dlc="A3CN_Scopes";
 		scope = 2;
+		scopeCurator = 2;
+		scopeArsenal = 2;
 		mass = 14;
 		author = "Hippye";
 		displayName = "Leupold Mark 4 LR/T M3";
@@ -246,6 +233,8 @@ class CfgWeapons
 	class a3cn_LSMARK4_Thermal: optic_LRPS {
 		dlc="A3CN_Scopes";
 		scope = 2;
+		scopeCurator = 2;
+		scopeArsenal = 2;
 		mass = 14;
 		author = "Hippye";
 		displayName = "Leupold Mark 4 LR/T M3 with Thermal";
@@ -318,6 +307,8 @@ class CfgWeapons
 	class a3cn_LSMARK4_Delta: a3cn_LSMARK4
 	{
 		scope = 2;
+		scopeCurator = 2;
+		scopeArsenal = 2;
 		mass = 14;
 		author = "Hippye";
 		displayName = "Leupold Mark 4 LR/T M3 w/ DeltaPoint";
@@ -334,6 +325,8 @@ class CfgWeapons
 	class a3cn_LSMARK4_Sand: a3cn_LSMARK4
 	{
 		scope = 2;
+scopeCurator = 2;
+scopeArsenal = 2;
 		mass = 14;
 		author = "Hippye";
 		displayName = "Leupold Mark 4 LR/T M3 Sand";
@@ -350,6 +343,8 @@ class CfgWeapons
 	class a3cn_SB31250: optic_LRPS
 	{
 		scope = 2;
+scopeCurator = 2;
+scopeArsenal = 2;
 		mass = 19;
 		author = "Hippye";
 		displayName = "SB 3-12x50 PM II/LP";
@@ -422,6 +417,8 @@ class CfgWeapons
 		author = "Hippye";
 		mass = 49;
 		scope = 2;
+scopeCurator = 2;
+scopeArsenal = 2;
 		displayName = "AN/PVS-10 (Black)";
 		picture = "\a3cn_scopes\UI\anpvs10black.paa";
 		model = "\a3cn_scopes\scope_03.p3d";
@@ -468,6 +465,8 @@ class CfgWeapons
 		author = "Hippye";
 		mass = 49;
 		scope = 2;
+scopeCurator = 2;
+scopeArsenal = 2;
 		displayName = "AN/PVS-10 (Green)";
 		picture = "\a3cn_scopes\UI\anpvs10green.paa";
 		model = "\a3cn_scopes\scope_03_green.p3d";
@@ -477,6 +476,8 @@ class CfgWeapons
 		author = "Hippye";
 		mass = 50;
 		scope = 2;
+scopeCurator = 2;
+scopeArsenal = 2;
 		displayName = "AN/PAS-13CV2 MWTS";
 		picture = "\a3cn_scopes\UI\anpas13m.paa";
 		model = "\a3cn_scopes\scope_04.p3d";
@@ -526,6 +527,8 @@ class CfgWeapons
 		author = "Hippye";
 		mass = 40;
 		scope = 2;
+scopeCurator = 2;
+scopeArsenal = 2;
 		displayName = "AN/PAS-13CV1 LWTS";
 		picture = "\a3cn_scopes\UI\anpas13l.paa";
 		model = "\a3cn_scopes\scope_05.p3d";
@@ -575,6 +578,8 @@ class CfgWeapons
 		author = "Hippye";
 		mass = 49;
 		scope = 2;
+scopeCurator = 2;
+scopeArsenal = 2;
 		displayName = "AN/PVS-4";
 		picture = "\a3cn_scopes\UI\anpvs4.paa";
 		model = "\a3cn_scopes\scope_06.p3d";
@@ -619,6 +624,8 @@ class CfgWeapons
 	class a3cn_M68CCO: ItemCore
 	{
 		scope = 2;
+scopeCurator = 2;
+scopeArsenal = 2;
 		author = "Hippye";
 		displayName = "M68 CCO";
 		picture = "\a3cn_scopes\UI\aimpoint.paa";
@@ -658,6 +665,8 @@ class CfgWeapons
 	class Zasleh2: ItemCore
 	{
 		scope = 2;
+scopeCurator = 2;
+scopeArsenal = 2;
 		model = "A3\weapons_f\data\zaslehsdl_proxy.p3d";
 	};
 };
