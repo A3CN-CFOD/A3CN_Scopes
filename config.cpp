@@ -159,9 +159,9 @@ class CfgWeapons
 
 	class a3cn_LSMARK4: optic_LRPS {
 		dlc="A3CN_Scopes";
-		scope = 2;
-		scopeCurator = 2;
-		scopeArsenal = 2;
+		scope = 0;
+		scopeCurator = 0;
+		scopeArsenal = 0;
 		mass = 14;
 		author = "Hippye";
 		displayName = "Leupold Mark 4 LR/T M3";
