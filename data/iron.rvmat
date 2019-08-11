@@ -1,9 +1,0 @@
-surfaceInfo = "a3cn_scopes\data\iron.bisurf";
-ambient[] = {0.0,0.222,0.37,1.0};
-diffuse[] = {0.0,0.222,0.37,1.0};
-forcedDiffuse[] = {0.0,0.0,0.0,0.0};
-emmisive[] = {0.0,0.0,0.0,1.0};
-specular[] = {0.0,0.0,0.0,1.0};
-specularPower = 1.0;
-PixelShaderID = "Normal";
-VertexShaderID = "Basic";
